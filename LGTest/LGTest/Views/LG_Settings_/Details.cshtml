@@ -1,0 +1,78 @@
+﻿@model LGTest.Models.WL_LIST_GUARD_SETTINGS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>WL_LIST_GUARD_SETTINGS</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inc_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inc_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lookback)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Lookback)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Frequency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Frequency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pass)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pass)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AutoPull)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AutoPull)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REACT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REACT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AutomatedandFull)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AutomatedandFull)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

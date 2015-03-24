@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WonderlandModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="WonderlandModelStoreContainer">
+          <EntitySet Name="WL_CHECK_DATES" EntityType="WonderlandModel.Store.WL_CHECK_DATES" store:Type="Tables" store:Schema="fresh_sqladmin" store:Name="WL_CHECK_DATES">
+            <DefiningQuery>SELECT 
+      [WL_CHECK_DATES].[INC_ID] AS [INC_ID], 
+      [WL_CHECK_DATES].[next_check] AS [next_check], 
+      [WL_CHECK_DATES].[last_check] AS [last_check]
+      FROM [fresh_sqladmin].[WL_CHECK_DATES] AS [WL_CHECK_DATES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WL_LIST_GUARD" EntityType="WonderlandModel.Store.WL_LIST_GUARD" store:Type="Tables" store:Schema="fresh_sqladmin" store:Name="WL_LIST_GUARD">
+            <DefiningQuery>SELECT 
+      [WL_LIST_GUARD].[Encrypted_Email_ID] AS [Encrypted_Email_ID], 
+      [WL_LIST_GUARD].[Inc_ID] AS [Inc_ID], 
+      [WL_LIST_GUARD].[StoS_Added] AS [StoS_Added], 
+      [WL_LIST_GUARD].[StoS_Last] AS [StoS_Last], 
+      [WL_LIST_GUARD].[StoS_Source] AS [StoS_Source], 
+      [WL_LIST_GUARD].[StoS_Job_ID] AS [StoS_Job_ID], 
+      [WL_LIST_GUARD].[WL_Last_Check] AS [WL_Last_Check], 
+      [WL_LIST_GUARD].[WL_Next_Check] AS [WL_Next_Check], 
+      [WL_LIST_GUARD].[WL_Last_Finding] AS [WL_Last_Finding], 
+      [WL_LIST_GUARD].[WL_Last_Comment] AS [WL_Last_Comment], 
+      [WL_LIST_GUARD].[Issue_ID] AS [Issue_ID], 
+      [WL_LIST_GUARD].[WL_LG_ID] AS [WL_LG_ID]
+      FROM [fresh_sqladmin].[WL_LIST_GUARD] AS [WL_LIST_GUARD]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WL_LIST_GUARD_SETTINGS" EntityType="WonderlandModel.Store.WL_LIST_GUARD_SETTINGS" store:Type="Tables" store:Schema="fresh_sqladmin" store:Name="WL_LIST_GUARD_SETTINGS">
+            <DefiningQuery>SELECT 
+      [WL_LIST_GUARD_SETTINGS].[Inc_ID] AS [Inc_ID], 
+      [WL_LIST_GUARD_SETTINGS].[Lookback] AS [Lookback], 
+      [WL_LIST_GUARD_SETTINGS].[Frequency] AS [Frequency], 
+      [WL_LIST_GUARD_SETTINGS].[Email] AS [Email], 
+      [WL_LIST_GUARD_SETTINGS].[Username] AS [Username], 
+      [WL_LIST_GUARD_SETTINGS].[Pass] AS [Pass], 
+      [WL_LIST_GUARD_SETTINGS].[AutoPull] AS [AutoPull], 
+      [WL_LIST_GUARD_SETTINGS].[REACT] AS [REACT], 
+      [WL_LIST_GUARD_SETTINGS].[AutomatedandFull] AS [AutomatedandFull]
+      FROM [fresh_sqladmin].[WL_LIST_GUARD_SETTINGS] AS [WL_LIST_GUARD_SETTINGS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WL_LIST_ISSUES" EntityType="WonderlandModel.Store.WL_LIST_ISSUES" store:Type="Tables" store:Schema="fresh_sqladmin" store:Name="WL_LIST_ISSUES">
+            <DefiningQuery>SELECT 
+      [WL_LIST_ISSUES].[Issue_ID] AS [Issue_ID], 
+      [WL_LIST_ISSUES].[Issue_Added] AS [Issue_Added], 
+      [WL_LIST_ISSUES].[Issue_Removed] AS [Issue_Removed], 
+      [WL_LIST_ISSUES].[Inc_ID] AS [Inc_ID], 
+      [WL_LIST_ISSUES].[Last_Check] AS [Last_Check], 
+      [WL_LIST_ISSUES].[Source] AS [Source], 
+      [WL_LIST_ISSUES].[Finding] AS [Finding], 
+      [WL_LIST_ISSUES].[Comment] AS [Comment], 
+      [WL_LIST_ISSUES].[StoS_Last] AS [StoS_Last], 
+      [WL_LIST_ISSUES].[Stos_JobID] AS [Stos_JobID]
+      FROM [fresh_sqladmin].[WL_LIST_ISSUES] AS [WL_LIST_ISSUES]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Wonderland.fresh_sqladmin.WL_CHECK_DATES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WL_CHECK_DATES">
+          <Key>
+            <PropertyRef Name="INC_ID" />
+          </Key>
+          <Property Name="INC_ID" Type="int" Nullable="false" />
+          <Property Name="next_check" Type="datetime" />
+          <Property Name="last_check" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Wonderland.fresh_sqladmin.WL_LIST_GUARD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WL_LIST_GUARD">
+          <Key>
+            <PropertyRef Name="Encrypted_Email_ID" />
+            <PropertyRef Name="Inc_ID" />
+            <PropertyRef Name="StoS_Added" />
+            <PropertyRef Name="StoS_Last" />
+            <PropertyRef Name="StoS_Source" />
+            <PropertyRef Name="WL_LG_ID" />
+          </Key>
+          <Property Name="Encrypted_Email_ID" Type="int" Nullable="false" />
+          <Property Name="Inc_ID" Type="int" Nullable="false" />
+          <Property Name="StoS_Added" Type="datetime" Nullable="false" />
+          <Property Name="StoS_Last" Type="datetime" Nullable="false" />
+          <Property Name="StoS_Source" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="StoS_Job_ID" Type="nvarchar" MaxLength="255" />
+          <Property Name="WL_Last_Check" Type="datetime" />
+          <Property Name="WL_Next_Check" Type="datetime" />
+          <Property Name="WL_Last_Finding" Type="nvarchar" MaxLength="50" />
+          <Property Name="WL_Last_Comment" Type="nvarchar" MaxLength="255" />
+          <Property Name="Issue_ID" Type="int" />
+          <Property Name="WL_LG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Wonderland.fresh_sqladmin.WL_LIST_GUARD_SETTINGS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WL_LIST_GUARD_SETTINGS">
+          <Key>
+            <PropertyRef Name="Inc_ID" />
+            <PropertyRef Name="Lookback" />
+            <PropertyRef Name="Frequency" />
+          </Key>
+          <Property Name="Inc_ID" Type="int" Nullable="false" />
+          <Property Name="Lookback" Type="int" Nullable="false" />
+          <Property Name="Frequency" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="1" />
+          <Property Name="Username" Type="nvarchar" MaxLength="250" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="250" />
+          <Property Name="AutoPull" Type="nvarchar" MaxLength="250" />
+          <Property Name="REACT" Type="nvarchar" MaxLength="250" />
+          <Property Name="AutomatedandFull" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Wonderland.fresh_sqladmin.WL_LIST_ISSUES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WL_LIST_ISSUES">
+          <Key>
+            <PropertyRef Name="Issue_ID" />
+            <PropertyRef Name="Issue_Added" />
+            <PropertyRef Name="Inc_ID" />
+            <PropertyRef Name="Last_Check" />
+            <PropertyRef Name="Source" />
+            <PropertyRef Name="Finding" />
+            <PropertyRef Name="Comment" />
+          </Key>
+          <Property Name="Issue_ID" Type="int" Nullable="false" />
+          <Property Name="Issue_Added" Type="datetime" Nullable="false" />
+          <Property Name="Issue_Removed" Type="datetime" />
+          <Property Name="Inc_ID" Type="int" Nullable="false" />
+          <Property Name="Last_Check" Type="datetime" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Finding" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="StoS_Last" Type="datetime" />
+          <Property Name="Stos_JobID" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'Wonderland.dbo.WL_Auditor_Export' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="WL_Auditor_Export">
+        <Property Name="Encrypted_Email_ID" Type="varchar" MaxLength="255" />
+        <Property Name="WL_Last_Finding" Type="varchar" MaxLength="255" />
+        <Property Name="WL_Last_Comment" Type="varchar" MaxLength="255" />
+        <Property Name="comment_code" Type="varchar" MaxLength="255" />
+        <Property Name="date_added" Type="datetime" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Wonderland.dbo.WL_PreAuditor_Export' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="WL_PreAuditor_Export">
+        <Property Name="Encrypted_Email_ID" Type="varchar" MaxLength="255" />
+        <Property Name="INC_ID" Type="varchar" MaxLength="255" />
+        <Property Name="StoS_Added" Type="varchar" MaxLength="255" />
+        <Property Name="StoS_Last" Type="varchar" MaxLength="255" />
+        <Property Name="source" Type="varchar" MaxLength="255" />
+        <Property Name="StoS_Job_ID" Type="varchar" MaxLength="255" />
+        <Property Name="WL_Last_Check" Type="varchar" MaxLength="255" />
+        <Property Name="WL_Next_Check" Type="varchar" MaxLength="255" />
+        <Property Name="date_added" Type="datetime" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WonderlandModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WonderlandEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="WL_CHECK_DATES" EntityType="WonderlandModel.WL_CHECK_DATES" />
+          <EntitySet Name="WL_LIST_GUARD" EntityType="WonderlandModel.WL_LIST_GUARD" />
+          <EntitySet Name="WL_LIST_GUARD_SETTINGS" EntityType="WonderlandModel.WL_LIST_GUARD_SETTINGS" />
+          <EntitySet Name="WL_LIST_ISSUES" EntityType="WonderlandModel.WL_LIST_ISSUES" />
+        </EntityContainer>
+        <EntityType Name="WL_CHECK_DATES">
+          <Key>
+            <PropertyRef Name="INC_ID" />
+          </Key>
+          <Property Name="INC_ID" Type="Int32" Nullable="false" />
+          <Property Name="next_check" Type="DateTime" Precision="3" />
+          <Property Name="last_check" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="WL_LIST_GUARD">
+          <Key>
+            <PropertyRef Name="Encrypted_Email_ID" />
+            <PropertyRef Name="Inc_ID" />
+            <PropertyRef Name="StoS_Added" />
+            <PropertyRef Name="StoS_Last" />
+            <PropertyRef Name="StoS_Source" />
+            <PropertyRef Name="WL_LG_ID" />
+          </Key>
+          <Property Name="Encrypted_Email_ID" Type="Int32" Nullable="false" />
+          <Property Name="Inc_ID" Type="Int32" Nullable="false" />
+          <Property Name="StoS_Added" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StoS_Last" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StoS_Source" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StoS_Job_ID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="WL_Last_Check" Type="DateTime" Precision="3" />
+          <Property Name="WL_Next_Check" Type="DateTime" Precision="3" />
+          <Property Name="WL_Last_Finding" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WL_Last_Comment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Issue_ID" Type="Int32" />
+          <Property Name="WL_LG_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="WL_LIST_GUARD_SETTINGS">
+          <Key>
+            <PropertyRef Name="Inc_ID" />
+            <PropertyRef Name="Lookback" />
+            <PropertyRef Name="Frequency" />
+          </Key>
+          <Property Name="Inc_ID" Type="Int32" Nullable="false" />
+          <Property Name="Lookback" Type="Int32" Nullable="false" />
+          <Property Name="Frequency" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="Username" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Pass" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="AutoPull" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="REACT" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="AutomatedandFull" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WL_LIST_ISSUES">
+          <Key>
+            <PropertyRef Name="Issue_ID" />
+            <PropertyRef Name="Issue_Added" />
+            <PropertyRef Name="Inc_ID" />
+            <PropertyRef Name="Last_Check" />
+            <PropertyRef Name="Source" />
+            <PropertyRef Name="Finding" />
+            <PropertyRef Name="Comment" />
+          </Key>
+          <Property Name="Issue_ID" Type="Int32" Nullable="false" />
+          <Property Name="Issue_Added" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Issue_Removed" Type="DateTime" Precision="3" />
+          <Property Name="Inc_ID" Type="Int32" Nullable="false" />
+          <Property Name="Last_Check" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Finding" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="StoS_Last" Type="DateTime" Precision="3" />
+          <Property Name="Stos_JobID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WonderlandModelStoreContainer" CdmEntityContainer="WonderlandEntities">
+          <EntitySetMapping Name="WL_CHECK_DATES">
+            <EntityTypeMapping TypeName="WonderlandModel.WL_CHECK_DATES">
+              <MappingFragment StoreEntitySet="WL_CHECK_DATES">
+                <ScalarProperty Name="INC_ID" ColumnName="INC_ID" />
+                <ScalarProperty Name="next_check" ColumnName="next_check" />
+                <ScalarProperty Name="last_check" ColumnName="last_check" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WL_LIST_GUARD">
+            <EntityTypeMapping TypeName="WonderlandModel.WL_LIST_GUARD">
+              <MappingFragment StoreEntitySet="WL_LIST_GUARD">
+                <ScalarProperty Name="Encrypted_Email_ID" ColumnName="Encrypted_Email_ID" />
+                <ScalarProperty Name="Inc_ID" ColumnName="Inc_ID" />
+                <ScalarProperty Name="StoS_Added" ColumnName="StoS_Added" />
+                <ScalarProperty Name="StoS_Last" ColumnName="StoS_Last" />
+                <ScalarProperty Name="StoS_Source" ColumnName="StoS_Source" />
+                <ScalarProperty Name="StoS_Job_ID" ColumnName="StoS_Job_ID" />
+                <ScalarProperty Name="WL_Last_Check" ColumnName="WL_Last_Check" />
+                <ScalarProperty Name="WL_Next_Check" ColumnName="WL_Next_Check" />
+                <ScalarProperty Name="WL_Last_Finding" ColumnName="WL_Last_Finding" />
+                <ScalarProperty Name="WL_Last_Comment" ColumnName="WL_Last_Comment" />
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="WL_LG_ID" ColumnName="WL_LG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WL_LIST_GUARD_SETTINGS">
+            <EntityTypeMapping TypeName="WonderlandModel.WL_LIST_GUARD_SETTINGS">
+              <MappingFragment StoreEntitySet="WL_LIST_GUARD_SETTINGS">
+                <ScalarProperty Name="Inc_ID" ColumnName="Inc_ID" />
+                <ScalarProperty Name="Lookback" ColumnName="Lookback" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="AutoPull" ColumnName="AutoPull" />
+                <ScalarProperty Name="REACT" ColumnName="REACT" />
+                <ScalarProperty Name="AutomatedandFull" ColumnName="AutomatedandFull" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WL_LIST_ISSUES">
+            <EntityTypeMapping TypeName="WonderlandModel.WL_LIST_ISSUES">
+              <MappingFragment StoreEntitySet="WL_LIST_ISSUES">
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="Issue_Added" ColumnName="Issue_Added" />
+                <ScalarProperty Name="Issue_Removed" ColumnName="Issue_Removed" />
+                <ScalarProperty Name="Inc_ID" ColumnName="Inc_ID" />
+                <ScalarProperty Name="Last_Check" ColumnName="Last_Check" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Finding" ColumnName="Finding" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="StoS_Last" ColumnName="StoS_Last" />
+                <ScalarProperty Name="Stos_JobID" ColumnName="Stos_JobID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
