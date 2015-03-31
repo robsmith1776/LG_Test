@@ -24,7 +24,7 @@ namespace LGTest.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your contact page.  hhhh";
 
             return View();
         }
